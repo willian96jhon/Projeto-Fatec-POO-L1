@@ -6,12 +6,19 @@
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 </head>
 <body>
-<h1>Bem vindo ao sistema da beleza!...</h1>
+<a th:href="@{/cadastrar}"> Cadastrar mais algum cliente</a></br>
+<h1>Lista com todos os clientes </h1></br>
 
-<h1>Menu:</h1>
-<h5> <spam><a th:href="@{/cadastrar}" >Cadastro de clientes</a> </spam> </h5>
-<h5>Listagem de Produtos</h5>
-<a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
+<div th:each="pessoa:${pessoas}">
+<p><span th:text="${pessoa.nome}">
+
+</span></p></br>
+
+</div>
+
+
+
+</form>
 
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>

@@ -6,12 +6,18 @@
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 </head>
 <body>
-<h1>Bem vindo ao sistema da beleza!...</h1>
 
-<h1>Menu:</h1>
-<h5> <spam><a th:href="@{/cadastrar}" >Cadastro de clientes</a> </spam> </h5>
-<h5>Listagem de Produtos</h5>
 <a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
+<h1>Formulário de Cadastro do Cliente </h1>
+
+<!-- Para onde enviar os dados do firmulário com action -->
+<form th:action="@{/cadastrar}" method="post">
+<input name="nome" placeholder="Nome do cliente"/> <br/>
+<!--  <input name="" placeholder="telefone"/>--> <br/>
+<input type="submit"/>
+
+
+</form>
 
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
