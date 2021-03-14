@@ -10,10 +10,12 @@
 <a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
 <h1>Formulário de Cadastro do Cliente </h1>
 
-<!-- Para onde enviar os dados do firmulário com action -->
+<!-- Para onde enviar os dados do formulário com action -->
 <form th:action="@{/cadastrar}" method="post">
 <input name="nome" placeholder="Nome do cliente"/> <br/>
-<!--  <input name="" placeholder="telefone"/>--> <br/>
+ <input name="numero" placeholder="telefone"/> <br/>
+ <input name="genero" placeholder="Gênero"/><br/>
+   <input name="nascimento" placeholder="Data de Nascimento" /> <br/>
 <input type="submit"/>
 
 
