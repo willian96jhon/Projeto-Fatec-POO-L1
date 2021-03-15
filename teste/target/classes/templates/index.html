@@ -4,18 +4,104 @@
 <title>Insert title here</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
-</head>
-<body>
-<h1>Bem vindo ao sistema da beleza!...</h1>
 
-<h1>Menu:</h1>
+<style>
+h1#tit{
+text-align:center;
+color:rgba(232,10,0,0.5);
+}
+
+section#alto{
+background-color:rgba(255,192,203,.6);
+padding:7px;
+}
+
+div#servicos{
+display:block;
+position:relative;
+top:0px;
+}
+
+div#servicos li{
+font-size:20px;
+}
+
+body{
+background-color:rgba(192,192,192,.5);
+padding: 20px 20px 20px 20px;
+}
+
+p{
+text-align:justify;
+margin-top:25px;
+padding-bottom:20px;
+font-size:20px;
+}
+
+footer#rodape{
+background-color:white;
+display: block;
+padding: 10px 10px 20px 20px;
+height: 100px;
+}
+
+footer#rodape h4{
+padding: 4px 5px 10px 0px;
+font-size:14px;
+position:relative;
+top:5px;
+}
+
+footer#rodape p{
+font-size: 12px;
+padding-top:0px;
+position:relative;
+top:0px;
+}
+
+footer#rodape p#peq{
+font-size:9px;
+padding-top:-5px;
+position:absolute;
+top:560px;}
+
+</style>
+
+</head>
+
+
+<body>
+<div id="interface">
+<section id="alto">
+<h1 id="tit"><b>Bem vindo ao sistema da beleza!...</b></h1></section>
+
+<p>Aqui na nossa loja oferecemos serviços para te deixar mais bonito/bonita, pois mesmo em ano de pandemia não podemos deixar de lado a nossa vaidade e temos agora, mais do que nunca cuidar de nós mesmos, pois somente assim conseguiremos sair dessa.</p>
+<div id="servicos">
+<h1><b>Menu:</b></h1>
+
+
+<ul>
+<li>Manicure e Pedicure;</li>
+<li>Design de Sombracelhas;</li>
+<li>Pintura e Corte de Cabelo;</li>
+<li>Serviços de Tratamento de Pele;</li>
+<li>Botox;</li>
+<li>Redução de Medidas e Emagrecimento;</li>
+
+</ul>
+
+</div>
+
 <h5> <spam><a th:href="@{/cadastrar}" >Cadastro de clientes</a> </spam> </h5>
-<h5>Listagem de Produtos</h5>
 <a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
 
+<footer id="rodape">
+<h4>Programação Orientada a Objetos</h4>
+<p>Por:</p> <p id="peq"> Jonathan Willian Gonçales Alves</p>
+</footer>
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
+</div>
 </body>
 </html>

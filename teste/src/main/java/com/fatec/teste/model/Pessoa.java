@@ -43,6 +43,8 @@ public abstract class Pessoa {
 	protected Set<Telefone> telefones= new HashSet<Telefone>();
 	
 	
+	
+	
 	public void setTelefones(Set<Telefone> telefones) {
 		this.telefones = telefones;
 	}
