@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Insert title here</title>
+<title>Home</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 
@@ -27,7 +27,7 @@ font-size:20px;
 }
 
 body{
-background-color:rgba(192,192,192,.5);
+background-color:rgba(135,206,250,.5);
 padding: 20px 20px 20px 20px;
 }
 
@@ -71,15 +71,27 @@ top:560px;}
 
 
 <body>
-<div id="interface">
 <section id="alto">
 <h1 id="tit"><b>Bem vindo ao sistema da beleza!...</b></h1></section>
 
-<p>Aqui na nossa loja oferecemos serviços para te deixar mais bonito/bonita, pois mesmo em ano de pandemia não podemos deixar de lado a nossa vaidade e temos agora, mais do que nunca cuidar de nós mesmos, pois somente assim conseguiremos sair dessa.</p>
-<p>Loja de Serviços de Beleza</p>
+
+<div id="interface">
+<nav id="menu">
+<h1><b>Menu:</b></h1>
+<h5> <spam><a th:href="@{/cadastrar}"  target="_blank">Cadastro de clientes</a> </spam> </h5>
+<a th:href="@{/listar-clientes}" target="_blank"><span>Listagem de Clientes</span></a>
+
+</nav>
+
+
+
+
+<p>Aqui na nossa loja oferecemos serviços para te deixar mais bonito/bonita, pois mesmo em ano de pandemia não podemos deixar de lado a nossa vaidade. Temos agora, mais do que nunca cuidar de nós mesmos, pois somente assim conseguiremos sair dessa.</p>
+
+
+
 
 <div id="servicos">
-<h1><b>Menu:</b></h1>
 
 
 <ul>
@@ -94,8 +106,7 @@ top:560px;}
 
 </div>
 
-<h5> <spam><a th:href="@{/cadastrar}" >Cadastro de clientes</a> </spam> </h5>
-<a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
+
 
 <footer id="rodape">
 <h4>Programação Orientada a Objetos</h4>

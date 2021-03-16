@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Insert title here</title>
+<title>Cadastro</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 
 
 <style>
+
+body{
+background-color:rgba(135,206,250,.5);
+padding: 20px 20px 20px 20px;
+}
+
+header#cabecalho {
+background-color:black;
+height: 70px;
+
+}
+
+header#cabecalho p#cadastro{
+  font-size:25px;
+  text-align:center;
+  color: white;
+}
 
 </style>
 </head>
@@ -14,7 +31,16 @@
 
 <body>
 
+<header id="cabecalho">
+<p id="cadastro"> <b>Olá novo cliente, aqui apresentamos nossa ficha de cadastro para que você possa experimentar nossos serviços</b></p>
+</header>
+
+<nav id="menu">
+<h1><b>Menu</b></h1>
 <a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
+</nav>
+
+
 <h1>Formulário de Cadastro do Cliente </h1>
 
 

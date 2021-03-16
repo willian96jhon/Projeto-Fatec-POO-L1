@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Insert title here</title>
+<title>Listagem</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+<style>
+ body {
+ background-color:rgba(135,206,250,.5);
+ }
+
+
+</style>
+
+
+
 </head>
 <body>
+<nav id="menu">
+<h1><b>Menu:</b></h1>
+
 <a th:href="@{/cadastrar}"> Cadastrar mais algum cliente</a></br>
+<a th:href="@{/}">Voltar à página principal</a>
+
+
+
+
+</nav>
 <h1>Lista com todos os clientes </h1></br>
 
 <div th:each="pessoa:${pessoas}">
