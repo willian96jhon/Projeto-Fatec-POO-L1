@@ -29,12 +29,39 @@ public class CadastroController {
     	c.getTelefones().add(t);
     	c.getServMulher().add(sf);
     	c.getServHomem().add(sm);
+    	
+    	//Condicionais Femininos
     	if(sf.getServicos().equals("Design")){
     		sf.addDesignCejas();
     	}
     	
+    	if(sf.getServicos().equals("Maanutenção de Cabelos")) {
+    		sf.addManutCabelo();
+    	}
+    	
+    	if(sf.getServicos().equals("Serviços de Pele")) {
+    		sf.addServicosPele();
+    	}
+    	
+    	if(sf.getServicos().equals("Botox")) {
+    		sf.addBotox();
+    	}
+    	
+    	if(sf.getServicos().equals("Emagrecimento") || sf.getServicos().equals("Redução de Medidas")) {
+    		sf.addCorporal();
+    	}
+    	//Condicionais Masculinos
+    	
     	if(sm.getServicosMasculinos().equals("Corte de Cabelo")) {
     		sm.addCorteCabelo();
+    	}
+    	
+    	if(sm.getServicosMasculinos().equals("Modelagem de Barba")) {
+    		sm.addModelagemBarba();
+    	}
+    	
+    	if(sm.getServicosMasculinos().equals("Tratamento de Quedas")) {
+    		sm.addTratamentoQuedas();
     	}
     	pr.save(c);
     	

@@ -44,6 +44,22 @@ public class ServicosFemininos {
 		++designCejas;
 	}
 	
+	public void addManutCabelo() {
+		++manutCabelo;
+	}
+	
+	public void addServicosPele() {
+		++servicosPele;
+	}
+	
+	public void addBotox() {
+		++botox;
+	}
+	
+	public void addCorporal() {
+		++corporal;
+	}
+	
 	
 	
 	

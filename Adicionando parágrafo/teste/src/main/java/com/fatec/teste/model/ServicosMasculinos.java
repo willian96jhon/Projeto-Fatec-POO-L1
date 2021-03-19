@@ -23,7 +23,7 @@ public class ServicosMasculinos {
 	private int modelagemBarba=0;
 	
 	@Column(nullable = false, unique= false)
-	private int TratamentoQuedas=0;
+	private int tratamentoQuedas=0;
 	
 	//Getters e Setters
 
@@ -60,11 +60,11 @@ public class ServicosMasculinos {
 	}
 
 	public int getTratamentoQuedas() {
-		return TratamentoQuedas;
+		return tratamentoQuedas;
 	}
 
 	public void setTratamentoQuedas(int tratamentoQuedas) {
-		TratamentoQuedas = tratamentoQuedas;
+		tratamentoQuedas = tratamentoQuedas;
 	}
 	
 	//Métodos
@@ -72,5 +72,12 @@ public class ServicosMasculinos {
 	public void addCorteCabelo() {
 		++corteCabelo;
 	}
-
+    
+	public void addModelagemBarba() {
+		++modelagemBarba;
+	}
+	
+	public void addTratamentoQuedas() {
+		++tratamentoQuedas;
+	}
 }
