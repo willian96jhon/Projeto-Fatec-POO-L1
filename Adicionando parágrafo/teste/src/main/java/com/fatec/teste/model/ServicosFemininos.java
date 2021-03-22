@@ -10,11 +10,14 @@ import javax.persistence.Id;
 public class ServicosFemininos {
 
 	
-	private String servicos;
+
 	
 	@Id()
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idServFemininos;
+	
+	@Column(nullable=false, unique=false)
+	private String servicos;
 	
 	@Column(nullable = false, unique= false)
 	private int manicureandPedicure;
@@ -203,13 +206,16 @@ public class ServicosFemininos {
 		this.idServFemininos = idServFemininos;
 	}
 
+	
+	public void setServicos(String servicos) {
+		this.servicos = servicos;
+	}
+	
+	
 	public String getServicos() {
 		return servicos;
 	}
 
-	public void setServicos(String servicos) {
-		this.servicos = servicos;
-	}
 	
 	
 }

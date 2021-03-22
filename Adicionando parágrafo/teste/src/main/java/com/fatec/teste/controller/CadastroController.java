@@ -1,5 +1,7 @@
 package com.fatec.teste.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,8 @@ public class CadastroController {
 	public String iniv() {
 		return "cadastro";
 	}
+    
+  
 
     
     @PostMapping("/cadastrar")
@@ -30,42 +34,10 @@ public class CadastroController {
     	c.getServMulher().add(sf);
     	c.getServHomem().add(sm);
     	
-    	//Condicionais Femininos
-    	if(sf.getServicos().equals("Design")){
-    		sf.addDesignCejas();
-    	}
     	
-    	if(sf.getServicos().equals("Maanutenção de Cabelos")) {
-    		sf.addManutCabelo();
-    	}
-    	
-    	if(sf.getServicos().equals("Serviços de Pele")) {
-    		sf.addServicosPele();
-    	}
-    	
-    	if(sf.getServicos().equals("Botox")) {
-    		sf.addBotox();
-    	}
-    	
-    	if(sf.getServicos().equals("Emagrecimento") || sf.getServicos().equals("Redução de Medidas")) {
-    		sf.addCorporal();
-    	}
-    	//Condicionais Masculinos
-    	
-    	if(sm.getServicosMasculinos().equals("Corte de Cabelo")) {
-    		sm.addCorteCabelo();
-    	}
-    	
-    	if(sm.getServicosMasculinos().equals("Modelagem de Barba")) {
-    		sm.addModelagemBarba();
-    	}
-    	
-    	if(sm.getServicosMasculinos().equals("Tratamento de Quedas")) {
-    		sm.addTratamentoQuedas();
-    	}
     	pr.save(c);
     	
-    	System.out.println(c.getGenero() + c.getNascimento() );
+    	
   		return "cadastro";
   	}
 }

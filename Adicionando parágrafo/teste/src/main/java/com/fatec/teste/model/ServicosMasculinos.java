@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class ServicosMasculinos {
+public class ServicosMasculinos  {
 	
-	private String servicosMasculinos;
+	
 	
 	
 	@Id()
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idServicosM;
+	
+	@Column(nullable=false, unique=false)
+	private String servicos;
 	
 	@Column(nullable = false, unique= false)
 	private int corteCabelo=0;
@@ -27,13 +30,7 @@ public class ServicosMasculinos {
 	
 	//Getters e Setters
 
-	public String getServicosMasculinos() {
-		return servicosMasculinos;
-	}
 
-	public void setServicosMasculinos(String servicosMasculinos) {
-		this.servicosMasculinos = servicosMasculinos;
-	}
 
 	public long getIdServicosM() {
 		return idServicosM;
@@ -65,6 +62,15 @@ public class ServicosMasculinos {
 
 	public void setTratamentoQuedas(int tratamentoQuedas) {
 		tratamentoQuedas = tratamentoQuedas;
+	}
+	
+	public void setServicos(String servicos) {
+		this.servicos = servicos;
+	}
+	
+	
+	public String getServicos() {
+		return servicos;
 	}
 	
 	//Métodos
