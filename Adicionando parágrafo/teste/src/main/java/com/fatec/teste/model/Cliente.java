@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente extends Pessoa{
@@ -16,13 +18,17 @@ public class Cliente extends Pessoa{
 	@Column
 	private String conta;
 	
+	/*@ManyToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name= "idServM")
+	protected Set<ServicosMasculinos> servM= new HashSet<ServicosMasculinos>();
+	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name= "idCliente-ServicosF")
-	private Set<ServicosFemininos> servMulher= new HashSet<ServicosFemininos>();
-
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name= "idCliente-ServicosM")
-	private Set<ServicosMasculinos> servHomem= new HashSet<ServicosMasculinos>();
+	@JoinColumn(name= "idServF")
+	protected Set<ServicosFemininos> servF= new HashSet<ServicosFemininos>();*/
+	
+    @OneToOne(cascade=CascadeType.ALL)
+	private ServicosMasculinos idServM;
+	
 	
 	//Getters e Setters
 	public String getConta() {
@@ -32,21 +38,23 @@ public class Cliente extends Pessoa{
 	public void setConta(String conta) {
 		this.conta = conta;
 	}
-
-	public Set<ServicosFemininos> getServMulher() {
-		return servMulher;
+	/*
+	public Set<ServicosMasculinos> getServM() {
+		return servM;
 	}
-
-	public void setServMulher(Set<ServicosFemininos> servMulher) {
-		this.servMulher = servMulher;
+	
+	public void setServM(Set<ServicosMasculinos> servM) {
+		this.servM = servM;
 	}
-
-	public Set<ServicosMasculinos> getServHomem() {
-		return servHomem;
+	
+	public Set<ServicosFemininos> getServF() {
+		return servF;
 	}
-
-	public void setServHomem(Set<ServicosMasculinos> servHomem) {
-		this.servHomem = servHomem;
-	}
+	
+	public void setServF(Set<ServicosFemininos> servF) {
+		this.servF = servF;
+	}*/
+	
+	
 
 }

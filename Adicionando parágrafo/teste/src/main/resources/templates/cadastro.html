@@ -40,16 +40,6 @@ header#cabecalho p#cadastro{
 <a th:href="@{/listar-clientes}"><span>Listagem de Clientes</span></a>
 </nav>
 
-<ul>
-<li>Manicure e Pedicure;</li>
-<li>Design de Sombracelhas;</li>
-<li>Pintura e Corte de Cabelo;</li>
-<li>Serviços de Tratamento de Pele;</li>
-<li>Botox;</li>
-<li>Redução de Medidas e Emagrecimento;</li>
-
-</ul>
-
 
 <h1>Formulário de Cadastro do Cliente </h1>
 
@@ -61,17 +51,17 @@ header#cabecalho p#cadastro{
 
 <h6>Telefone:</h6> <input name="numero" placeholder="telefone"/> <br/>
 
-<h6>Gênero:</h6> <input name="genero" id="genero" placeholder="Gênero"/><br/>
+<h6>Gênero:</h6> <input name="genero" placeholder="Gênero"/><br/>
 
    <h6>Data de Nascimento:</h6><input name="nascimento" placeholder="Data de Nascimento" /> <br/>
    
-   <h6>Serviços :</h6><input name="servicos" placeholder="Serviços "/><br/>
+   <h6>Serviços Femininos:</h6><input name="servicos" placeholder="Serviços Femininos"/><br/>
    
-   
- 
-    
+  <h6>Serviços Masculinos:</h6> <input name="servicosMasculinos" placeholder="Serviços Masculinos"/> <br/>
+  
+  
 <input type="submit"/>
-<div id="teste"></div>
+
 
 </form>
 
@@ -80,5 +70,4 @@ header#cabecalho p#cadastro{
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
-
 </html>

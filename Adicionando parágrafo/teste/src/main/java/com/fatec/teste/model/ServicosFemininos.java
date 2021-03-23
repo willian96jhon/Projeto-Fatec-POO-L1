@@ -10,32 +10,29 @@ import javax.persistence.Id;
 public class ServicosFemininos {
 
 	
-
+	private String servicos;
 	
 	@Id()
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idServFemininos;
 	
-	@Column(nullable=false, unique=false)
-	private String servicos;
-	
 	@Column(nullable = false, unique= false)
 	private int manicureandPedicure;
 	
 	@Column(nullable = false, unique= false)
-	private int designCejas=0;
+	private int designCejas;
 	
 	@Column(nullable = false, unique= false)
-	private int manutCabelo=0;
+	private int manutCabelo;
 	
 	@Column(nullable = false, unique= false)
-	private int servicosPele=0;
+	private int servicosPele;
 	
 	@Column(nullable = false, unique= false)
-	private int botox=0;
+	private int botox;
 	
 	@Column(nullable = false, unique= false)
-	private int corporal=0;
+	private int corporal;
 	
 	//Métodos
 	
@@ -45,22 +42,6 @@ public class ServicosFemininos {
 	
 	public void addDesignCejas() {
 		++designCejas;
-	}
-	
-	public void addManutCabelo() {
-		++manutCabelo;
-	}
-	
-	public void addServicosPele() {
-		++servicosPele;
-	}
-	
-	public void addBotox() {
-		++botox;
-	}
-	
-	public void addCorporal() {
-		++corporal;
 	}
 	
 	
@@ -206,16 +187,13 @@ public class ServicosFemininos {
 		this.idServFemininos = idServFemininos;
 	}
 
-	
-	public void setServicos(String servicos) {
-		this.servicos = servicos;
-	}
-	
-	
 	public String getServicos() {
 		return servicos;
 	}
 
+	public void setServicos(String servicos) {
+		this.servicos = servicos;
+	}
 	
 	
 }

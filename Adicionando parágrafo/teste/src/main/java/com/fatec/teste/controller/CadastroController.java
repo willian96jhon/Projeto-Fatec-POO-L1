@@ -1,7 +1,5 @@
 package com.fatec.teste.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,19 +22,16 @@ public class CadastroController {
 	public String iniv() {
 		return "cadastro";
 	}
-    
-  
 
     
     @PostMapping("/cadastrar")
-  	public String iniv(Cliente c, Telefone t, ServicosFemininos sf, ServicosMasculinos sm) {
+  	public String iniv(Cliente c, Telefone t) {
     	c.getTelefones().add(t);
-    	c.getServMulher().add(sf);
-    	c.getServHomem().add(sm);
     	
-    	
+    	//c.getServM().add(sm);
+    	//c.getServF().add(sf);
+    
     	pr.save(c);
-    	
     	
   		return "cadastro";
   	}

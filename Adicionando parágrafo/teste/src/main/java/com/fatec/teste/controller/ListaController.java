@@ -15,19 +15,13 @@ import com.fatec.teste.model.Pessoa;
 public class ListaController {
 	@Autowired
 	private PessoaRepository pr;
-	
-	
-	
+
 	@GetMapping("/listar-clientes")
 	public ModelAndView listarPessoas() {
-		List<Pessoa> pessoas = pr.findAll();
+		List<Cliente> pessoas = pr.findAll();
 		ModelAndView mv= new ModelAndView("listar");
-		mv.addObject("pessoas", pessoas);
+		
+		mv.addObject("pessoas",pessoas);
 		return mv;
-		
-		
 	}
-
-	
-	
 }
