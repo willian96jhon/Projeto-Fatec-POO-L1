@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Listas de Homens</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+
+
+<style>
+
+body{
+background-color:rgba(135,206,250,.5);
+padding: 20px 20px 20px 20px;
+}
+
+
+
+
+</style>
+</head>
+
+
+<body>
+
+
+
+
+</nav>
+<h1>Lista com todos os homens </h1></br>
+
+<div th:each="homem1:${homens}">
+<p><span th:text="${homem1.id}"></span> <span th:text="${homem1.nome}"></span>
+<span th:text="${homem1.genero}"></span> <span th:text="${homem1.nascimento}"></span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

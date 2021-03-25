@@ -1,5 +1,6 @@
 package com.fatec.teste.model;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,8 +32,10 @@ public abstract class Pessoa {
 	protected String genero;
 	
 	@Column(nullable=false, unique=false)
-	protected String nascimento;
+	protected LocalDate nascimento;
 	
+	@Column
+	protected int idade;
 	
 	
 	
@@ -77,12 +80,20 @@ public abstract class Pessoa {
 		this.genero = genero;
 	}
 	
-	public String getNascimento() {
+	public LocalDate getNascimento() {
 		return nascimento;
 	}
 	
-	public void setNascimento(String nascimento) {
+	public void setNascimento(LocalDate nascimento) {
 		this.nascimento = nascimento;
+	}
+	
+	public int getIdade() {
+		return idade;
+	}
+	
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
 

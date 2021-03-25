@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Configurações</title>
+<title>Listas de Mulher</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 
@@ -26,17 +26,17 @@ padding: 20px 20px 20px 20px;
 
 
 </nav>
-<h1>Lista com todos as mulheres </h1></br>
+<h1>Lista com todos os homens </h1></br>
 
-<div th:each="homem1:${homens}">
-<p><span th:text="${homem1.id}"></span> <span th:text="${homem1.nome}"></span>
-<span th:text="${homem1.genero}"></span> <span th:text="${homem1.nascimento}"></span>
-
-</p>
-
-
+<div th:each="clienteIdade:${ordemIdades}">
+<p><span th:text="${clienteIdade.nome}"></span><br/> 
+<span th:text="${clienteIdade.idade}"></span></p>
 
 </div>
+
+
+
+
 
 
 
