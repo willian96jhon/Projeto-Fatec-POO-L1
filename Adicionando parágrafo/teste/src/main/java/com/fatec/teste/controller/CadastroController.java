@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fatec.teste.db.PessoaRepository;
 import com.fatec.teste.model.Cliente;
+import com.fatec.teste.model.Filial;
 import com.fatec.teste.model.Pessoa;
 import com.fatec.teste.model.ServicosFemininos;
 import com.fatec.teste.model.ServicosMasculinos;
@@ -49,12 +50,15 @@ public class CadastroController {
 
     
     @PostMapping("/cadastrar")
-  	public String iniv(Cliente c, Telefone t) {
+  	public String iniv(Cliente c, Telefone t, Filial f) {
     	c.getTelefones().add(t);
+    	
+    	c.setEmpresa(f);
+    	
     	
     	//c.getServM().add(sm);
     	//c.getServF().add(sf);
-    	
+    	c.id();
     	pr.save(c);
     	
     	idade();

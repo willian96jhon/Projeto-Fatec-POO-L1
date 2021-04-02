@@ -1,14 +1,10 @@
 package com.fatec.teste.model;
 
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -29,7 +25,12 @@ public class Cliente extends Pessoa{
     @OneToOne(cascade=CascadeType.ALL)
 	private ServicosMasculinos idServM;
 	
-	
+    @ManyToOne(cascade=CascadeType.ALL)
+	private Filial empresa;
+    
+    private int idEmpresa;
+    
+    
 	//Getters e Setters
 	public String getConta() {
 		return conta;
@@ -55,6 +56,32 @@ public class Cliente extends Pessoa{
 		this.servF = servF;
 	}*/
 	
+	public Filial getEmpresa() {
+		return empresa;
+	}
 	
+	public void setEmpresa(Filial empresa) {
+		this.empresa = empresa;
+	}
+	
+	public int getIdEmpresa() {
+		return idEmpresa;
+	}
+	
+	public void setIdEmpresa(int idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
+	
+	//Métodos
+	public void id () {
+		if(getEmpresa().getFilial().equals("FilialA")) {
+			setIdEmpresa(1);
+		}else if(getEmpresa().getFilial().equals("FilialB")) {
+			setIdEmpresa(2);
+		}else {
+			setIdEmpresa(3);
+		}
+		
+		}
 
 }
