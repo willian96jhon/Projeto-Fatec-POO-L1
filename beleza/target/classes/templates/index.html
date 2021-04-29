@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+</head>
+<body>
+<header id="cabecalho">
+<h2 id="titulo">Sistema de Gerenciamento da World Beauty <label>@WB</label></h2>
+
+  <a class="btn btn-link" href="/inicio/listagem"><label>Listagem</label></a>
+
+
+</header>
+
+
+
+<form action="/inicio" method="POST" th:object="${cliente}" >
+
+<div class="alert alert-success alert-dismissible" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+    <span th:text="${mensagem}">Cadastro salvo com sucesso!</span>
+
+</div>
+
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+    <div th:each="detailedError : ${#fields.detailedErrors()}">
+       <span th:text="${detailedError.message}"></span>
+    
+    </div>
+
+</div>
+
+   <input type="hidden" th:field="*{idCliente}"/>
+
+<div class="form-group"  th:classappend="${#fields.hasErrors('nome')} ? has-error" >
+
+   <label>Nome: *</label>
+      <input type="text" class="form-control" placeholder="Nome" th:field="*{nome}"/>
+</div>
+  
+      
+   <label>Data de Nascimento: *</label>
+            <input type="text" class="form-control" placeholder="dd/MM/aaaa" th:field="*{dataNascimento}"/>
+   <label>Gênero</label>
+       <select th:field="*{genero}">
+          <option value="Masculino"> Masculino</option>
+          <option value="Feminino"> Feminino</option>
+       
+       
+       </select>
+       
+       
+       <select th:field="*{filial}">
+          <option value="filialA">Filial A</option>
+          <option value="filialB">Filial B</option>
+          <option value="filialC">Filial C</option>
+       
+       </select>
+       
+     <div class="form-group" id="salvar">
+        <div class="col-sm-offset-2 col-sm-10">
+           <button type="submit" class="btn btn-primary">Salvar</button>
+        
+        
+        </div>
+     
+     
+     </div>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

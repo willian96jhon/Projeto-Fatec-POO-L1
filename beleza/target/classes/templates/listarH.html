@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Listagem</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+
+</head>
+
+
+<body>
+<header id="cabecalho">
+<a class="btn btn-link" href="/inicio"><label>Ir Para Cadastro</label></a>
+<a class="btn btn-link" href="/inicio/listagem"><label>Voltar a pesquisa</label></a>
+
+
+
+
+
+</header>
+
+
+
+
+
+
+<div id="listar">
+<table class="table table-bordered table-striped">
+<thead>
+
+
+  <tr>
+  
+  
+     <th class="text-center col-md-2">Identificador</th>
+     <th class="text-center col-md-2">Nome</th>
+     <th class="text-center col-md-2">DataNascimento</th>
+     <th class="text-center col-md-2">Idade</th>
+     
+     
+     <th class="text-center col-md-2">Filial</th>
+   </tr>
+   
+   </thead>
+   
+   
+   <tr th:each="cadastro : ${homens}">
+      <td class="text-center" th:text="${cadastro.idCliente}"></td>
+      <td class="text-center" th:text="${cadastro.nome}"></td>
+      <td class="text-center" th:text="${cadastro.dataNascimento}"></td>
+      <td class="text-center" th:text="${cadastro.idade}"></td>
+      <td class="text-center" th:text="${cadastro.filial}"></td>
+      <td>
+       
+      </td>
+      </tr>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+</div>
+
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

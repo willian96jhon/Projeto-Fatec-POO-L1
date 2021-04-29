@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+</head>
+<body>
+<header id="cabecalho">
+
+
+
+</header>
+
+
+
+<form action="/inicio/adicionarServicos" method="POST" >
+
+
+
+   <label>Adicionar Servico Masculino</label>
+      <select name="servico">
+        <option value="">--</option>
+        <option value="Cortar Cabelos">Cortar cabelos</option>
+        <option value="Fazer a barba">Fazer a barba</option>
+        <option value="Tratamento para quedas de cabelo">Tratamento para quedas de cabelos</option>
+        <option value="Venda de produtos">Venda de  produtos</option>
+      
+      
+      </select></br></br>
+      
+      <label>Adicionar Serviço Feminino</label>
+      
+      <select name="servicoF">
+         <option value="">--</option>
+         <option value="manicure">Manicure</option>
+         <option value="pedicure">Pedicure</option>
+         <option value="design de sombracelhas">Design de sombracelhas</option>
+         <option value="manutenção de cabelos">Corte e Pintura de cabelos</option>
+         <option value="Remoção de rugas">Remoção de rugas</option>
+         <option value="remoção de manchas na pele">Remoção de manchas na pele</option>
+         <option value="Aplicação de botox">Aplicação de botox</option>
+         <option value="Redução de medidas">Redução de medidas</option>
+      
+      
+      </select>
+
+      
+    
+       
+     <div class="form-group" id="salvar">
+        <div class="col-sm-offset-2 col-sm-10">
+           <button type="submit" class="btn btn-primary">Salvar</button>
+        
+        
+        </div>
+     
+     
+     </div>
+
+
+
+
+
+</form></br></br>
+
+<label>Listas de serviços masculinos adquiridos pelo Cliente</label>
+<div id="lista">
+  <div th:each="servicos : ${servicos}">
+  
+     <span th:text="${servicos.servico}"></span>
+  
+  
+  </div>
+  
+    <label>Lista de serviços femininos adquiridos pelo Cliente</label></br>
+  
+  <div th:each="servicos : ${servicos}">
+      <span th:text="${servicos.servicoF}"></span>
+
+  </div>
+</div>
+
+
+
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

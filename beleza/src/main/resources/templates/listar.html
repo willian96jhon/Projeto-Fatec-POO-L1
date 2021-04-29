@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Listagem</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+
+</head>
+
+
+<body>
+<header id="cabecalho">
+<a class="btn btn-link" href="/inicio"><label>Ir Para Cadastro</label></a>
+<a class="btn btn-link" href="/inicio/ListarHomem"><label>Listar Homens</label></a>
+<a class="btn btn-link" href="/inicio/listarMulher"><label>Listar Mulheres</label></a>
+<a class="btn btn-link" href="/inicio/listarTudo"><label>Listas Específicas de Médias</label></a>
+
+
+
+
+
+</header>
+
+
+
+
+
+
+<div id="listar">
+<table class="table table-bordered table-striped">
+<thead>
+
+
+  <tr>
+  
+  
+     <th class="text-center col-md-2">Identificador</th>
+     <th class="text-center col-md-2">Nome</th>
+     <th class="text-center col-md-2">DataNascimento</th>
+     <th class="text-center col-md-2">Gênero</th>
+     <th class="text-center col-md-2">Idade</th>
+     
+     
+   </tr>
+   
+   </thead>
+   
+   
+   <tr th:each="cadastro : ${clientes}">
+      <td class="text-center" th:text="${cadastro.idCliente}"></td>
+      <td class="text-center" th:text="${cadastro.nome}"></td>
+      <td class="text-center" th:text="${cadastro.dataNascimento}"></td>
+      <td class="text-center" th:text="${cadastro.genero}"></td>
+      <td class="text-center" th:text="${cadastro.idade}"></td>
+      <td>
+         <a class="btn btn-link btn-xs" th:href="@{/inicio/listagem/{idC}(idC=${cadastro.idCliente})}" title="Editar" rel="tooltip" data-placement="top">
+            <span class="glyphicon glyphicon-pencil"></span>
+         
+         </a>
+      
+      
+       <a class="btn btn-link btn-xs" data-toggle="modal" data-target="#meuModalzao" th:attr="data-codigo=${cadastro.idCliente}, data-descricao=${cadastro.nome}"   title="Excluir" rel="tooltip" data-placement="top">
+          <span class="glyphicon glyphicon-asterisk"></span>
+       
+       </a>
+      </td>
+      <td>
+       <a class="btn btn-link" th:href="@{/inicio/adicionarServicos/{idCl}(idCl=${cadastro.idCliente})}" title="Add Serviço" rel="tooltip" data-placement="top">Adicionar Serviço/ Detalhes</a>
+      
+      
+      
+      
+      </td>
+      
+      
+      </tr>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+<div th:replace="modal"></div>
+</div>
+
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/excluir.js"></script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
